@@ -65,6 +65,9 @@ fighter_2 = Fighter(1050,463,True,WIZARD_DATA,wizard_sheet,WIZARD_ANIMATION_STEP
 run = True
 while run:
     clock.tick(FPS)
+    
+    
+    
 
     #draw bg
     draw_bg()
@@ -75,6 +78,9 @@ while run:
     #move fighters
     fighter_1.move(SCREEN_WIDTH,SCREEN_HEIGHT,screen,fighter_2)
 
+    #update animation
+    fighter_1.update()
+    fighter_2.update() 
 
     #draw fighters
     fighter_1.draw(screen)
