@@ -24,9 +24,15 @@ BLACK = (0,0,0)
 
 #define fighter variables
 WARRIOR_SIZE = 162
-WARRIOR_DATA=[WARRIOR_SIZE] 
+WARRIOR_SCALE = 6
+WARRIOR_OFFSET = [72,56]
+WARRIOR_DATA=[WARRIOR_SIZE,WARRIOR_SCALE,WARRIOR_OFFSET] 
 WIZARD_SIZE = 250
-WIZARD_DATA=[WIZARD_SIZE]
+WIZARD_SCALE = 4.5
+WIZARD_OFFSET = [112,107]
+WIZARD_DATA=[WIZARD_SIZE,WIZARD_SCALE,WIZARD_OFFSET]
+
+
 #load back-image
 bg_image = pygame.image.load("assets/images/background/background.jpg").convert_alpha()
 
@@ -51,8 +57,8 @@ def draw_health_bar(health,x,y):
 
 
 #instances of fighters
-fighter_1 = Fighter(200,463,WARRIOR_DATA,warrior_sheet,WARRIOR_ANIMATTION_STEPS)
-fighter_2 = Fighter(1050,463,WIZARD_DATA,wizard_sheet,WIZARD_ANIMATION_STEPS)
+fighter_1 = Fighter(200,463,False,WARRIOR_DATA,warrior_sheet,WARRIOR_ANIMATTION_STEPS)
+fighter_2 = Fighter(1050,463,True,WIZARD_DATA,wizard_sheet,WIZARD_ANIMATION_STEPS)
 
 
 #game loop
